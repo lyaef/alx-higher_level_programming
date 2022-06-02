@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-for i in 'abcdefghijklmnopqrstuvwxyz':
-    if (i != "q" and i != "e"):
-        print("{}".format(i), end="")
+for c in range(97, 123):
+    if c != 101 and c != 113:
+        print('{}'.format(chr(c)), end='')
