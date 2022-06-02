@@ -1,31 +1,32 @@
 #include "lists.h"
-
 /**
- * check_cycle - check for loop in LL
- * @list: head of linked list
- *
- * Description - check for loops in LL
- * Return: 1 if cycled, 0 if not
+ * check_cycle - cycle tortoise and hare
+ * @list: pointer to head
+ * Return: 1 on success, 0 otherwise.
  */
-
 int check_cycle(listint_t *list)
 {
-	listint_t *slow, *fast;
+	listint_t *tortoise;
+	listint_t *hare;
 
-	if (!list)
-	{
+	if (list == NULL)
 		return (0);
-	}
-	slow = list;
-	fast = list->next;
-	while (fast && slow && fast->next)
+	tortoise = list;
+	hare = list;
+	while (hare->next != NULL && hare->next->next != NULL)
 	{
-		if (slow == fast)
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
 		{
+			tortoise = list;
+			while (tortoise != hare)
+			{
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
 			return (1);
 		}
-		slow = slow->next;
-		fast = fast->next->next;
 	}
 	return (0);
 }
