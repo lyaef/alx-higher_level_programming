@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    Newmatrix = []
-    i = 0
-    for x in matrix:
-        Newmatrix.append([])
-        for y in matrix[i]:
-            Newmatrix[i].append(y**2)
-        i += 1
-    return (Newmatrix)
+    new_matrix = []
+    for i in range(len(matrix)):
+        row = []
+        new_matrix.append(row)
+        for j in range(len(matrix[i])):
+            element = matrix[i][j] ** 2
+            row.append(element)
+    return new_matrix    
