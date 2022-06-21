@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" create a new class Square
+""" Creates an empty class called Square
+"""
+
+
 class Square:
-""" Empty hence the pass statement
-  pass
+    """ Empty class using pass
+    """
+    pass
